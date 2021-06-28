@@ -1,0 +1,21 @@
+{
+  "name": "vue-script-loader",
+  "version": "0.0.1",
+  "description": "Inject external scripts dynamicatly on youtr Vue projects",
+  "main": "src/index.js",
+  "author": "Sergio Rubio <s.rubio131@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/srubio131/vue-script-loader/issues"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vue",
+    "vue-script-loader",
+    "external script",
+    "load external script"
+  ]
+  
+}
