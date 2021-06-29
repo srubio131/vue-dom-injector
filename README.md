@@ -9,17 +9,17 @@
 ## Install
 
   ``` bash
-  npm install vue-script-loader --save
+  npm install @srubio131/vue-script-loader --save
   ```
   or
   ``` bash
-  yarn add vue-script-loader
+  yarn add @srubio131/vue-script-loader
   ```
 
 ## Install
 
   ``` js
-  import VueScriptLoader from 'vue-script-loader'
+  import VueScriptLoader from '@srubio131/vue-script-loader'
 
   Vue.use(VueScriptLoader)
   // Or you can specify any other options

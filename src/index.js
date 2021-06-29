@@ -1,6 +1,7 @@
+import NodeInjector from './NodeInjector'
+
 const DEFAULT_OPTIONS = {
     name: 'scriptLoader',
-    script: '',
     extraAttrs: {},
     parentElement: 'head',
     insertAsLastElement: true,
@@ -13,6 +14,6 @@ export default {
             ...DEFAULT_OPTIONS,
             ...customOptions,
         }
-        app.prototype[`$${options.name}`] = new ScriptLoader(options)
+        Object.defineProperty(app.prototype, `$${options.name}`, { value: new NodeInjector(options) })
     }
 }
