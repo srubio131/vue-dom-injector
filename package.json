@@ -1,6 +1,6 @@
 {
   "name": "vue-dom-injector",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Injects any HTML tag into DOM on your Vue projects",
   "main": "src/index.js",
   "author": "Sergio Rubio <srubio131>",
