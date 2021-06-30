@@ -1,21 +1,24 @@
 {
-  "name": "@srubio131/vue-script-loader",
-  "version": "1.0.3",
-  "description": "Inject external scripts dynamicatly on youtr Vue projects",
+  "name": "vue-dom-injector",
+  "version": "1.0.0",
+  "description": "Injects any HTML tag into DOM on your Vue projects",
   "main": "src/index.js",
-  "author": "Sergio Rubio <s.rubio131@gmail.com>",
+  "author": "Sergio Rubio <srubio131>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/srubio131/vue-script-loader/issues"
+    "url": "https://github.com/srubio131/vue-dom-injector/issues"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "vue",
-    "vue-script-loader",
+    "vue-dom-loader",
     "external script",
-    "load external script"
+    "load external script",
+    "script",
+    "style",
+    "dom"
   ]
   
 }

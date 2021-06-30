@@ -9,27 +9,22 @@
 ## Install
 
   ``` bash
-  npm install @srubio131/vue-script-loader --save
+  npm install vue-dom-injector --save
   ```
   or
   ``` bash
-  yarn add @srubio131/vue-script-loader
+  yarn add vue-dom-injector
   ```
 
 ## Install
 
   ``` js
-  import VueScriptLoader from '@srubio131/vue-script-loader'
+  import VueDOMInjector from 'vue-dom-injector'
 
-  Vue.use(VueScriptLoader)
+  Vue.use(VueDOMInjector)
   // Or you can specify any other options
-  Vue.use(VueScriptLoader, {
-    name: 'myScriptLoader',
-    extraAttrs: {
-        id: 10
-    },
-    parentElement: 'head',
-    insertAsLastElement: false, // Add script to the bottom of parentElement; true by default
+  Vue.use(VueDOMInjector, {
+    name: 'myDOMInjector'
   })
   ```
 

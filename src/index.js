@@ -1,19 +1,7 @@
-import NodeInjector from './NodeInjector'
-
-const DEFAULT_OPTIONS = {
-    name: 'scriptLoader',
-    extraAttrs: {},
-    parentElement: 'head',
-    insertAsLastElement: true,
-}
-
+import DOMInjector from './DOMInjector'
 
 export default {
-    install: (app, customOptions) => {
-        const options = {
-            ...DEFAULT_OPTIONS,
-            ...customOptions,
-        }
-        Object.defineProperty(app.prototype, `$${options.name}`, { value: new NodeInjector(options) })
+    install: (app, { name = 'domInjector' } = {}) => {
+        Object.defineProperty(app.prototype, `$${name}`, { value: new DOMInjector() })
     }
 }
