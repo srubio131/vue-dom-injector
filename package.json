@@ -1,10 +1,14 @@
 {
   "name": "vue-dom-injector",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Injects any HTML tag into DOM on your Vue projects",
   "main": "src/index.js",
   "author": "Sergio Rubio <srubio131>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/srubio131/vue-dom-injector"
+  },
   "bugs": {
     "url": "https://github.com/srubio131/vue-dom-injector/issues"
   },
