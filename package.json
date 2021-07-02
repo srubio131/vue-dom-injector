@@ -13,7 +13,8 @@
     "url": "https://github.com/srubio131/vue-dom-injector/issues"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "prepare": "husky install"
   },
   "keywords": [
     "vue",
