@@ -63,9 +63,9 @@ You can add VueDOMInjector inside main.js file or as a standalone plugin in your
   this.$domInjector.injectNode(`<script>window.alert("Hi! Injected code alert")<\/script>`)
   this.$domInjector.injectNode(`<script>window.alert("Hi! Injected code alert")<\/script>`, {
       parentTag: 'body',        // 'head' by default
-      insertAsLastTag: 'false'  // 'true' by default
+      insertAsLastTag: 'false', // 'true' by default
       extraAttrs: {             // {}     by default
-        id: 'myScript'
+        id: 'myScript',
         async: true
       }
   })
@@ -90,7 +90,7 @@ You can add VueDOMInjector inside main.js file or as a standalone plugin in your
     parentTag: 'head',
     insertAsLastTag: true,
     extraAttrs: {
-      id: 'myAnalyticsScript'
+      id: 'myAnalyticsScript',
       type: 'text/javascript'
     }
   }).then(() => alert('Injected first analytics script!'));
@@ -99,7 +99,7 @@ You can add VueDOMInjector inside main.js file or as a standalone plugin in your
     parentTag: 'head',
     insertAsLastTag: true,
     extraAttrs: {
-      id: 'myAnalyticsScript2'
+      id: 'myAnalyticsScript2',
       type: 'text/javascript'
     }
   }).then(() => alert('Injected second analytics script!'));
@@ -129,11 +129,11 @@ You can add VueDOMInjector inside main.js file or as a standalone plugin in your
 
 | Method              | Prop                | Description                                                            | Type                                            | Default        |
 | ------------------- | ------------------- | ---------------------------------------------------------------------- | ----------------------------------------------- | -------------- |
-| injectNode          | newTag              | new tag in string format **_(required)_**                              | `string`                                        | -              |
+| injectNode          | -                       | new tag in string format **_(required)_**                              | `string`                                        | -              |
 |                     | parentTag           | name of the parent tag into which the new node will be injected        | `string`                                        | 'head'         |
 |                     | insertAsLastTag     | if true, new node will be injected at the end, if false, will be first | `boolean`                                       | true           |
 |                     | extraAtts           | object with any extra attrs (id, style, etc.)                          | `object`                                        | {}             |
-| removeNode          | selectorCss         | use your own formatter, such as moment.js **_(required)_**             | `string`                                        | -              |
+| removeNode          | -                       | use your own formatter, such as moment.js **_(required)_**             | `string`                                        | -              |
 
 ## License
   MIT Licensed | Copyright © 2021-present srubio131

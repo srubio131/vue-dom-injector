@@ -13,16 +13,22 @@
     "url": "https://github.com/srubio131/vue-dom-injector/issues"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [
     "vue",
     "vue-dom-loader",
     "external script",
     "load external script",
+    "analytics",
+    "tag manager",
     "script",
     "style",
     "dom"
-  ]
-  
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.7",
+    "jest": "^27.0.6"
+  }
 }

@@ -1,4 +1,4 @@
-const DEFAULT_OPTIONS = {
+ const DEFAULT_OPTIONS = {
     extraAttrs: {},
     parentTag: 'head',
     insertAsLastTag: true,
@@ -9,10 +9,10 @@ export default class DOMInjector {
     constructor () {}
 
     injectNode (tag, {
-        extraAttrs = DEFAULT_OPTIONS.extraAttrs,
         parentTag = DEFAULT_OPTIONS.parentTag,
-        insertAsLastTag = DEFAULT_OPTIONS.insertAsLastTag
-    }) {
+        insertAsLastTag = DEFAULT_OPTIONS.insertAsLastTag,
+        extraAttrs = DEFAULT_OPTIONS.extraAttrs
+    } = {}) {
         return new Promise((resolve, reject) => {
             try {
                 const node = this._createNode(tag, extraAttrs)
@@ -49,7 +49,7 @@ export default class DOMInjector {
         return node
     }
 
-    _addExtraAttrsToNode (node, extraAttrs = []) {
+    _addExtraAttrsToNode (node, extraAttrs = {}) {
         const extraAttrsKeys = Object.keys(extraAttrs)
         if (extraAttrsKeys.length) {
             extraAttrsKeys.forEach((extraAttrsKey) => {
