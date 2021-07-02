@@ -2,19 +2,29 @@
   "name": "vue-dom-injector",
   "version": "1.0.4",
   "description": "Inject and remove HTML tags (script, style, etc) into DOM in your Vue projects",
-  "main": "src/index.js",
   "author": "Sergio Rubio <srubio131>",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/srubio131/vue-dom-injector"
+  "scripts": {
+    "lint": "vue-cli-service lint",
+    "prepare": "husky install",
+    "test": "jest"
+  },
+  "main": "src/index.js",
+  "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.7",
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-vue": "^6.2.2",
+    "husky": "^7.0.0",
+    "jest": "^27.0.6",
+    "prettier": "^2.2.1"
   },
   "bugs": {
     "url": "https://github.com/srubio131/vue-dom-injector/issues"
-  },
-  "scripts": {
-    "test": "jest",
-    "prepare": "husky install"
   },
   "keywords": [
     "vue",
@@ -27,12 +37,9 @@
     "style",
     "dom"
   ],
-  "devDependencies": {
-    "@babel/core": "^7.14.6",
-    "@babel/preset-env": "^7.14.7",
-    "@commitlint/cli": "^12.1.4",
-    "@commitlint/config-conventional": "^12.1.4",
-    "husky": "^7.0.0",
-    "jest": "^27.0.6"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/srubio131/vue-dom-injector"
   }
 }

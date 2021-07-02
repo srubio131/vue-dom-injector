@@ -1,3 +1,3 @@
 module.exports = {
-    testEnvironment: "jsdom",   // Test window.document with jest
+  testEnvironment: "jsdom", // Test window.document with jest
 };
