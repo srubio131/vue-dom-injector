@@ -1,15 +1,15 @@
-name: Publish and Release
+name: Release and Publish
 
 on:
+  pull_request:
   push:
-    tags: [ 'v*' ] # Push events to matching v*, i.e. v1.0, v20.15.10
-    branches: [ main ]
+    branches:
+      - 'release/*'
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
-    
       - name: Checkout Code
         uses: actions/checkout@v2
       
@@ -18,11 +18,14 @@ jobs:
           
       - name: Run Unit tests
         run: yarn test
-      
-      - name: Publish
-        uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
+
+  release:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: get-npm-version
+        id: package-version
+        uses: martinbeentjes/npm-get-version-action@master
 
       - name: Create Release
         id: create_release
@@ -30,7 +33,26 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
         with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
+          tag_name: v${{ steps.package-version.outputs.current-version }}
+          release_name: Release v${{ steps.package-version.outputs.current-version }}
           draft: false
           prerelease: false
+
+  publish:
+    needs: [ test, release ]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Set node version (12)
+        uses: actions/setup-node@v1
+          with:
+            node-version: 12
+
+      - name: Publish
+        run: |
+          npm config set //registry.npmjs.org/:_authToken ${ NPM_TOKEN }
+          npm publish --ignore-scripts
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
