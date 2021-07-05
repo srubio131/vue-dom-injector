@@ -14,9 +14,8 @@
     <img src="https://github.com/srubio131/vue-dom-injector/workflows/CI/badge.svg?branch=main&event=push" alt="CI badge">
   </a>
   <a href="https://codecov.io/gh/srubio131/vue-dom-injector">
-    <img src="https://img.shields.io/codecov/c/github/srubio131/vue-dom-injector.svg" alt="Coverage">
+    <img src="https://codecov.io/gh/srubio131/vue-dom-injector/branch/develop/graph/badge.svg?token=JQ2KZOILI4"/>
   </a>
-  
   <a href="https://github.com/srubio131/vue-dom-injector/blob/main/LICENSE.md">
     <img src="https://img.shields.io/npm/l/vue-dom-injector.svg" alt="License">
   </a>
