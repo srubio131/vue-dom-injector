@@ -1,12 +1,12 @@
 {
   "name": "vue-dom-injector",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Inject and remove HTML tags (script, style, etc) into DOM in your Vue projects",
   "author": "Sergio Rubio <srubio131>",
   "scripts": {
     "lint": "vue-cli-service lint",
     "postinstall": "husky install",
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "main": "src/index.js",
   "devDependencies": {

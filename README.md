@@ -4,7 +4,21 @@
 
 <p align="center">
   <a href="https://www.npmjs.com/package/vue-dom-injector">
+    <img src="https://img.shields.io/npm/dt/vue-dom-injector.svg" alt="Downloads">
+  </a>
+  <a href="https://www.npmjs.com/package/vue-dom-injector">
     <img src="https://img.shields.io/npm/dm/vue-dom-injector.svg" alt="Downloads">
+  </a>
+  <br>
+  <a href="https://github.com/srubio131/vue-dom-injector/actions?query=workflow%3ACI">
+    <img src="https://github.com/srubio131/vue-dom-injector/workflows/CI/badge.svg?branch=main&event=push" alt="CI badge">
+  </a>
+  <a href="https://codecov.io/gh/srubio131/vue-dom-injector">
+    <img src="https://img.shields.io/codecov/c/github/srubio131/vue-dom-injector.svg" alt="Coverage">
+  </a>
+  
+  <a href="https://github.com/srubio131/vue-dom-injector/blob/main/LICENSE.md">
+    <img src="https://img.shields.io/npm/l/vue-dom-injector.svg" alt="License">
   </a>
   <a href="https://www.npmjs.com/package/vue-dom-injector">
     <img src="https://img.shields.io/npm/v/vue-dom-injector.svg" alt="Version">
@@ -22,7 +36,7 @@ Useful for injecting third party scripts such as **Google Tag Manager**, **Googl
 
 Or simply add a new HTML tag in the DOM of our Vue application.
 
-Warning: If a **\<script>** is inserted, the javascript code inside it will be executed. **_Inject only scripts that you trust because they will be executed and could contain malicious code_**
+> **Warning**: If a **\<script>** is inserted, the javascript code inside it will be executed. **_Inject only scripts that you trust because they will be executed and could contain malicious code_**
 
 ## Demo
 <a href="https://vue-dom-injector.stackblitz.io" target="__blank">https://vue-dom-injector.stackblitz.io</a>

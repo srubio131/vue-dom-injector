@@ -1,6 +1,7 @@
-name: Release and Publish
+name: CI
 
 on:
+  pull_request:
   push:
     branches:
       - main
@@ -17,6 +18,9 @@ jobs:
           
       - name: Run Unit tests
         run: yarn test
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v1
 
   release:
     needs: test
