@@ -24,8 +24,37 @@ jobs:
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
 
-  release:
+  generate_changelog:
     needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Generate changelog
+        uses: charmixer/auto-changelog-action@v1
+        with:
+          token: ${{ secrets.TOKEN_GITHUB }}
+
+      - name: Commit files
+        run: |
+          git config --local user.email "$CI_EMAIL"
+          git config --local user.name "$CI_USER"
+          git add CHANGELOG.md && git commit -m 'ci(changelog): updated CHANGELOG.md' && echo "push=true" >> $GITHUB_ENV || echo "No changes to CHANGELOG.md"
+        env:
+          CI_USER: ${{ secrets.USER_GITHUB }}
+          CI_EMAIL: ${{ secrets.EMAIL_GITHUB }}
+
+      - name: Push changes
+        if: env.push == 'true'
+        run: |
+          git push "https://$CI_USER:$CI_TOKEN@github.com/$GITHUB_REPOSITORY.git" HEAD:main
+        env:
+          CI_USER: ${{ secrets.USER_GITHUB }}
+          CI_EMAIL: ${{ secrets.EMAIL_GITHUB }}
+
+  release:
+    needs: [ test, generate_changelog ]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -47,7 +76,7 @@ jobs:
           prerelease: false
 
   publish:
-    needs: [ test, release ]
+    needs: release
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
