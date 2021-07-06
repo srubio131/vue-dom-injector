@@ -2,7 +2,15 @@
 
 ## [Unreleased](https://github.com/srubio131/vue-dom-injector/tree/HEAD)
 
-[Full Changelog](https://github.com/srubio131/vue-dom-injector/compare/v1.0.8...HEAD)
+[Full Changelog](https://github.com/srubio131/vue-dom-injector/compare/v1.0.10...HEAD)
+
+**Closed issues:**
+
+- Add Changelog [\#11](https://github.com/srubio131/vue-dom-injector/issues/11)
+
+## [v1.0.10](https://github.com/srubio131/vue-dom-injector/tree/v1.0.10) (2021-07-05)
+
+[Full Changelog](https://github.com/srubio131/vue-dom-injector/compare/v1.0.8...v1.0.10)
 
 **Closed issues:**
 
