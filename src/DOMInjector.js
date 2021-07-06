@@ -20,6 +20,10 @@ export default class DOMInjector {
     } = {}
   ) {
     return new Promise((resolve, reject) => {
+      if (!tag) {
+        reject("To inject a node it's necessary to indicate a tag");
+      }
+
       try {
         const node = this._createNode(tag, extraAttrs);
         const parentTagNode = document.querySelector(parentTag);

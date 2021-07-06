@@ -14,7 +14,7 @@
     <img src="https://github.com/srubio131/vue-dom-injector/workflows/CI/badge.svg?branch=main&event=push" alt="CI badge">
   </a>
   <a href="https://codecov.io/gh/srubio131/vue-dom-injector">
-    <img src="https://codecov.io/gh/srubio131/vue-dom-injector/branch/develop/graph/badge.svg?token=JQ2KZOILI4"/>
+    <img src="https://codecov.io/gh/srubio131/vue-dom-injector/branch/main/graph/badge.svg?token=JQ2KZOILI4"/>
   </a>
   <a href="https://github.com/srubio131/vue-dom-injector/blob/main/LICENSE.md">
     <img src="https://img.shields.io/npm/l/vue-dom-injector.svg" alt="License">
@@ -147,8 +147,8 @@ You can add VueDOMInjector inside main.js file or as a standalone plugin in your
 |                     | parentTag           | name of the parent tag into which the new node will be injected        | `string`                                        | 'head'         |
 |                     | insertAsLastTag     | if true, new node will be injected at the end, if false, will be first | `boolean`                                       | true           |
 |                     | extraAtts           | object with any extra attrs (id, style, etc.)                          | `object`                                        | {}             |
-| removeNode          | -                   | css selector for match and remove single tag **_(required)_**             | `string`                                        | -              |
-| removeAllNodes      | -                   | css selector for match and remove all tags **_(required)_**             | `string`                                        | -              |
+| removeNode          | -                   | css selector for match and remove single tag **_(required)_**          | `string`                                        | -              |
+| removeAllNodes      | -                   | css selector for match and remove all tags **_(required)_**            | `string`                                        | -              |
 
 ## License
   MIT Licensed | Copyright © 2021-present srubio131
