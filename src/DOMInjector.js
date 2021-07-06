@@ -51,16 +51,14 @@ export default class DOMInjector {
       }
 
       try {
-        const tags = applyFunc[method](tagSelector);
+        const tags = Array.from(applyFunc[method](tagSelector));
 
-        if (tags && tags.length) {
+        if (tags.every((tag) => tag !== null)) {
           tags.forEach((tag) => {
             tag.parentNode.removeChild(tag);
           });
-          resolve();
-        } else {
-          reject(`Selector <${tagSelector}> not found`);
         }
+        resolve();
       } catch (e) {
         reject("An error occurred while deleting the node: " + e);
       }

@@ -136,11 +136,5 @@ describe("Public methods", () => {
         }, 1000);
       });
     });
-    test("remove all nodes not found (error)", () => {
-      expect.assertions(1);
-      return $domInjector.removeAllNodes("div[test='20']").catch((e) => {
-        expect(e).toMatch(`Selector <div[test='20']> not found`);
-      });
-    });
   });
 });
