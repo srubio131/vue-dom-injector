@@ -137,16 +137,18 @@ You can add VueDOMInjector inside main.js file or as a standalone plugin in your
   ```js
   this.$domInjector.removeNode('#myScript')
   this.$domInjector.removeNode('input[type="text"]')
+  this.$domInjector.removeAllNodes('script[src*="googleadservices"]')
   ```
 ## Props
 
 | Method              | Prop                | Description                                                            | Type                                            | Default        |
 | ------------------- | ------------------- | ---------------------------------------------------------------------- | ----------------------------------------------- | -------------- |
-| injectNode          | -                       | new tag in string format **_(required)_**                              | `string`                                        | -              |
+| injectNode          | -                   | new tag in string format **_(required)_**                              | `string`                                        | -              |
 |                     | parentTag           | name of the parent tag into which the new node will be injected        | `string`                                        | 'head'         |
 |                     | insertAsLastTag     | if true, new node will be injected at the end, if false, will be first | `boolean`                                       | true           |
 |                     | extraAtts           | object with any extra attrs (id, style, etc.)                          | `object`                                        | {}             |
-| removeNode          | -                       | use your own formatter, such as moment.js **_(required)_**             | `string`                                        | -              |
+| removeNode          | -                   | css selector for match and remove single tag **_(required)_**             | `string`                                        | -              |
+| removeAllNodes      | -                   | css selector for match and remove all tags **_(required)_**             | `string`                                        | -              |
 
 ## License
   MIT Licensed | Copyright © 2021-present srubio131
