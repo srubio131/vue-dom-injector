@@ -46,6 +46,12 @@ describe("Private methods", () => {
 
 describe("Public methods", () => {
   describe("injectNode()", () => {
+    test("inject node without parameters (error)", () => {
+      expect.assertions(1);
+      return $domInjector.injectNode().catch((e) => {
+        expect(e).toMatch("To inject a node it's necessary to indicate a tag");
+      });
+    });
     test("inject node without parameters (defaults)", () => {
       return $domInjector.injectNode(scriptString).then((node) => {
         const injectedNode = document.querySelector("#my-script");
