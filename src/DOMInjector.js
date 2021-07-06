@@ -3,6 +3,10 @@ const DEFAULT_OPTIONS = {
   parentTag: "head",
   insertAsLastTag: true,
 };
+const REMOVE_METHODS = {
+  SINGLE: "single",
+  ALL: "all",
+};
 
 export default class DOMInjector {
   constructor() {}
@@ -28,16 +32,35 @@ export default class DOMInjector {
     });
   }
 
+  removeAllNodes(tagSelector) {
+    return this._deleteNode(tagSelector, REMOVE_METHODS.ALL);
+  }
+
   removeNode(tagSelector) {
+    return this._deleteNode(tagSelector, REMOVE_METHODS.SINGLE);
+  }
+
+  _deleteNode(tagSelector, method) {
+    const applyFunc = {
+      [REMOVE_METHODS.SINGLE]: (tag) => [document.querySelector(tag)],
+      [REMOVE_METHODS.ALL]: (tag) => document.querySelectorAll(tag),
+    };
     return new Promise((resolve, reject) => {
       if (!tagSelector) {
         reject("To delete a node it's necessary to indicate a selector");
       }
 
       try {
-        const tag = document.querySelector(tagSelector);
-        tag.parentNode.removeChild(tag);
-        resolve();
+        const tags = applyFunc[method](tagSelector);
+
+        if (tags && tags.length) {
+          tags.forEach((tag) => {
+            tag.parentNode.removeChild(tag);
+          });
+          resolve();
+        } else {
+          reject(`Selector <${tagSelector}> not found`);
+        }
       } catch (e) {
         reject("An error occurred while deleting the node: " + e);
       }
