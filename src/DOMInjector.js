@@ -26,10 +26,12 @@ export default class DOMInjector {
 
       try {
         const node = this._createNode(tag, extraAttrs);
-        const parentTagNode = document.querySelector(parentTag);
-        if (insertAsLastTag) parentTagNode.appendChild(node);
-        else parentTagNode.prepend(node);
-        resolve(node);
+        if (!this._alreadyExists(parentTag, node)) {
+          const parentTagNode = document.querySelector(parentTag);
+          if (insertAsLastTag) parentTagNode.appendChild(node);
+          else parentTagNode.prepend(node);
+          resolve(node);
+        }
       } catch (e) {
         reject(new Error("The script could not be injected succesfully"));
       }
@@ -86,5 +88,12 @@ export default class DOMInjector {
       });
     }
     return node;
+  }
+
+  _alreadyExists(parentTag, node) {
+    const parentTagNode = document.querySelector(parentTag);
+    return Array.from(parentTagNode.children).some((child) =>
+      child.isEqualNode(node)
+    );
   }
 }
