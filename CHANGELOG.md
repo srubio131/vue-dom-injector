@@ -44,6 +44,10 @@
 
 [Full Changelog](https://github.com/srubio131/vue-dom-injector/compare/v1.0.5...v)
 
+**Merged pull requests:**
+
+- chore\(deps-dev\): bump eslint-plugin-vue from 6.2.2 to 7.12.1 [\#10](https://github.com/srubio131/vue-dom-injector/pull/10) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [v1.0.5](https://github.com/srubio131/vue-dom-injector/tree/v1.0.5) (2021-07-02)
 
 [Full Changelog](https://github.com/srubio131/vue-dom-injector/compare/v1.0.4...v1.0.5)
