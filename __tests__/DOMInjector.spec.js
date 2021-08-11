@@ -100,29 +100,29 @@ describe("Public methods", () => {
         });
       });
     });
-    // test("inject node if already exists but not equals", () => {
-    //   const testScript = `
-    //       <script id="test-script">
-    //           alert('Hi!')
-    //       <\/script>
-    //   `;
-    //   const params = {
-    //     extraAttrs: {
-    //       class: "p-10",
-    //     },
-    //   };
-    //   return $domInjector.injectNode(testScript).then(() => {
-    //     $domInjector.injectNode(testScript, params).then((node) => {
-    //       const injectedNodes = document.head.querySelectorAll("#test-script");
-    //       expect(injectedNodes.length).toBe(2);
-    //       const injectedNode = injectedNodes[0];
-    //       expect(injectedNode).toBeTruthy();
-    //       expect(injectedNode.id).toBe("test-script");
-    //       expect(injectedNode.parentElement).toMatchObject(document.head);
-    //       expect(node).toMatchObject(injectedNode);
-    //     });
-    //   });
-    // });
+    test.skip("inject node if already exists but not equals", () => {
+      const testScript1 = `
+          <script id="test-script">
+              alert('Hi!')
+          <\/script>
+      `;
+      const testScript2 = `
+          <script id="test-script" class="p-10">
+              alert('Bye!')
+          <\/script>
+      `;
+      return $domInjector.injectNode(testScript1).then(() => {
+        $domInjector.injectNode(testScript2).then((node) => {
+          const injectedNodes = document.head.querySelectorAll("script");
+          expect(injectedNodes.length).toBe(2);
+          const injectedNode = injectedNodes[0];
+          expect(injectedNode).toBeTruthy();
+          expect(injectedNode.id).toBe("test-script");
+          expect(injectedNode.parentElement).toMatchObject(document.head);
+          expect(node).toMatchObject(injectedNode);
+        });
+      });
+    }, 10000);
   });
 
   describe("removeNode()", () => {
