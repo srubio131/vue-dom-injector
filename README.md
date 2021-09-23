@@ -57,13 +57,24 @@ You can see the demo code
 You can add VueDOMInjector inside main.js file or as a standalone plugin in your /plugins folder
 
   ``` js
-  import VueDOMInjector from 'vue-dom-injector'
+  // Vue 2
+  import Vue from 'vue';
+  import VueDOMInjector from 'vue-dom-injector';
 
-  Vue.use(VueDOMInjector)
+  Vue.use(VueDOMInjector);
   // Or you can specify any other name
   Vue.use(VueDOMInjector, {
     name: 'myDOMInjector'   // Then you can use like: this.$myDOMInjector...
-  })
+  });
+
+  // Vue 3
+  import { createApp } from 'vue'
+  import VueDOMInjector from 'vue-dom-injector'
+  import App from './App.vue'
+
+  createApp(App)
+    .use(VueDOMInjector)
+    .mount('#app')
   ```
 
 ## Usage
