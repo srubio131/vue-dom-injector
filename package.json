@@ -1,6 +1,6 @@
 {
   "name": "vue-dom-injector",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "Inject and remove HTML tags (script, style, etc) into DOM in your Vue2/Vue3 projects",
   "author": "Sergio Rubio <srubio131>",
   "scripts": {
