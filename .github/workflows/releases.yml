@@ -1,4 +1,4 @@
-name: CI
+name: ProductionCI
 
 on:
   push:
@@ -19,41 +19,12 @@ jobs:
         run: yarn test
 
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v1
+        uses: codecov/codecov-action@v2.1.0
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
 
-  generate_changelog:
-    needs: test
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v2
-
-      - name: Generate changelog
-        uses: charmixer/auto-changelog-action@v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Commit files
-        run: |
-          git config --local user.email "$CI_EMAIL"
-          git config --local user.name "$CI_USER"
-          git add CHANGELOG.md && git commit -m 'ci(changelog): updated CHANGELOG.md' && echo "push=true" >> $GITHUB_ENV || echo "No changes to CHANGELOG.md"
-        env:
-          CI_USER: ${{ secrets.USER_GITHUB }}
-          CI_EMAIL: ${{ secrets.EMAIL_GITHUB }}
-
-      - name: Push changes
-        if: env.push == 'true'
-        run: |
-          git push "https://$CI_USER:$CI_TOKEN@github.com/$GITHUB_REPOSITORY.git" HEAD:main
-        env:
-          CI_USER: ${{ secrets.USER_GITHUB }}
-          CI_EMAIL: ${{ secrets.EMAIL_GITHUB }}
-
   release:
-    needs: [ test, generate_changelog ]
+    needs: [ test ]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
