@@ -1,6 +1,6 @@
 {
   "name": "vue-dom-injector",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "Inject and remove HTML tags (script, style, etc) into DOM in your Vue2/Vue3 projects",
   "author": "Sergio Rubio <srubio131>",
   "scripts": {
@@ -13,14 +13,14 @@
     "@babel/preset-env": "^7.15.0",
     "@commitlint/cli": "^13.1.0",
     "@commitlint/config-conventional": "^13.1.0",
-    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-eslint": "^4.5.13",
     "@vue/eslint-config-prettier": "^6.0.0",
     "eslint": "^6.7.2",
-    "eslint-plugin-prettier": "^3.3.1",
-    "eslint-plugin-vue": "^7.15.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-vue": "^7.16.0",
     "husky": "^7.0.1",
     "jest": "^27.0.6",
-    "prettier": "^2.2.1"
+    "prettier": "^2.3.2"
   },
   "bugs": {
     "url": "https://github.com/srubio131/vue-dom-injector/issues"
