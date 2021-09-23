@@ -11,7 +11,7 @@
   </a>
   <br>
   <a href="https://github.com/srubio131/vue-dom-injector/actions?query=workflow%3ACI">
-    <img src="https://github.com/srubio131/vue-dom-injector/workflows/CI/badge.svg?branch=main&event=push" alt="CI badge">
+    <img src="https://github.com/srubio131/vue-dom-injector/workflows/ProductionCI/badge.svg?branch=releases&event=push" alt="CI badge">
   </a>
   <a href="https://codecov.io/gh/srubio131/vue-dom-injector">
     <img src="https://codecov.io/gh/srubio131/vue-dom-injector/branch/main/graph/badge.svg?token=JQ2KZOILI4"/>
